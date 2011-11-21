@@ -1,0 +1,17 @@
+= awesome_imports
+
+Rails plugin for import data via CSV
+
+== Installation
+
+  gem install awesome_imports
+
+== Usage
+
+Later
+
+view spec/face_app.rb
+
+== Copyright
+
+Copyright (c) 2011 Akihiro Matsumura. See LICENSE for details.

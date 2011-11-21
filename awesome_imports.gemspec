@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = AwesomeImports::VERSION
   s.authors     = ["Akihiro Matsumura"]
   s.email       = ["matsumura.aki@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/mataki/awesome_imports"
   s.summary     = %q{Awesome csv importer for rails}
   s.description = %q{Cool and simple data importer for rails by CSV}
 
