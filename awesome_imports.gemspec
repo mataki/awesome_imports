@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Akihiro Matsumura"]
   s.email       = ["matsumura.aki@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Awesome csv importer for rails}
+  s.description = %q{Cool and simple data importer for rails by CSV}
 
   s.rubyforge_project = "awesome_imports"
 
@@ -17,4 +17,10 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'activesupport', ['>= 3.0.0']
+  s.add_dependency 'activemodel', ['>= 3.0.0']
+  s.add_dependency 'actionpack', ['>= 3.0.0']
+  s.add_development_dependency 'rake', [">= 0"]
+  s.add_development_dependency 'rspec', ['>= 0']
 end
