@@ -57,5 +57,10 @@ describe AwesomeImports::CsvImport do
   end
 
   describe "#update" do
+    it "should success to call" do
+      pending
+      @import.stub(:parse_csv_from_stored_file).and_return([])
+      @import.update
+    end
   end
 end

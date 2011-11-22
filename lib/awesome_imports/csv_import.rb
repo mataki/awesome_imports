@@ -1,5 +1,7 @@
 require "csv"
 require "active_model"
+require "active_record"
+require "active_record/validations"
 require "active_support/core_ext"
 
 module AwesomeImports
@@ -77,7 +79,7 @@ module AwesomeImports
 
     def update
       @records = parse_csv_from_stored_file
-      Keyword.transaction do
+      ActiveRecord::Base.transaction do
         records.each do |record|
           record.save!
         end
