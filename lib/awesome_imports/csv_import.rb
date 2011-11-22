@@ -92,6 +92,10 @@ module AwesomeImports
       false
     end
 
+    def has_error?
+      @records.any?{ |record| !record.errors.empty? }
+    end
+
     private
     # TODO: Remove old csv files
     def remove_old_stored_csvs
