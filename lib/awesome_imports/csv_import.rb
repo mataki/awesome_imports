@@ -17,8 +17,8 @@ module AwesomeImports
     def id
     end
 
-    define_attribute_methods ["csv_file"]
-    attr_accessor :csv_file
+    define_attribute_methods ["csv_file", "user"]
+    attr_accessor :csv_file, :user
 
     def initialize(attr = {})
       attribute = attr.with_indifferent_access

@@ -19,6 +19,7 @@ module AwesomeImports
 
       def create
         import = resource_class.new(params[import_name.to_sym])
+        import.user = current_user if respond_to?(:current_user)
         import.confirm
         session[import_name.to_sym] = import.store_attached_csv_file
 
@@ -27,6 +28,7 @@ module AwesomeImports
 
       def update
         import = resource_class.restore_from_file(session[import_name.to_sym])
+        import.user = current_user if respond_to?(:current_user)
         if import.update
           flash[:notice] = I18n.t("awesome_imports.controller.success")
           session[import_name.to_sym] = nil
