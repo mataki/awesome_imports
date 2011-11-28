@@ -3,14 +3,6 @@ module AwesomeImports
   module CsvImportsController
     extend ActiveSupport::Concern
 
-    included do
-      cattr_reader :object_name, :import_name, :resource_class
-
-      @@object_name = self.name.underscore.split('_').first # "keyword"
-      @@import_name = [object_name, "import"].join('_')     # "keyword_import"
-      @@resource_class = import_name.classify.constantize   # KeywordImport
-    end
-
     module InstanceMethods
 
       def new
@@ -39,10 +31,33 @@ module AwesomeImports
           render :create
         end
       end
+
+      private
+      def object_name
+        self.class.object_name
+      end
+
+      def import_name
+        self.class.import_name
+      end
+
+      def resource_class
+        self.class.resource_class
+      end
     end
 
     module ClassMethods
-    end
+      def object_name
+        self.name.underscore.split('_').first # "keyword"
+      end
 
+      def import_name
+        [object_name, "import"].join('_')     # "keyword_import"
+      end
+
+      def resource_class
+        import_name.classify.constantize   # KeywordImport
+      end
+    end
   end
 end
